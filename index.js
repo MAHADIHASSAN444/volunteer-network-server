@@ -31,7 +31,7 @@ client.connect(err => {
 
   app.post( "/addSector",(req,res)=> {
       const sector = req.body;
-      sectorCollection.insertOne(sector)
+      sectorCollection.insertMany(sector)
       .then(result => {
           console.log(result.insertedCount);
           res.send(result.insertedCount);
